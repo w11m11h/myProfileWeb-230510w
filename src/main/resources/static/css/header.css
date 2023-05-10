@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+tr.headerline {
+	height: 50px;
+	background-color: #3B9AE1;
+}
+
+td.headertext {
+	font-size: 16px;
+	font-family: Arial;
+	text-align: center;
+	color: #DAF5FF;
+}
+
+td.margin01 {
+	width: 65%
+}
+
+td.margin02 {
+	width: 1%
+}
+
+tr.marginline {
+	height: 40px;
+}
