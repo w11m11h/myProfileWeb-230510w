@@ -20,7 +20,7 @@
 			<td class="titlebox">
 				<span class="title02">I'm Moohee Won, a developer who wants a development job. Please call me back.</span>
 			</td>
-		</tr>
+		</tr>		
 		<tr>
 			<td>
 				<center>
@@ -55,5 +55,6 @@
 		</tr>	
 	</table>
 	</center>
+	<%@ include file="include/footer.jsp" %>
 </body>
 </html>
