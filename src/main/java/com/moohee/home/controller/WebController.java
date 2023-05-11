@@ -19,8 +19,8 @@ import com.moohee.home.dto.MemberDto;
 public class WebController {
 	
 	@Autowired
-	private SqlSession sqlSession;
-
+	private SqlSession sqlSession;	
+	
 	@RequestMapping(value = "/index")
 	public String index() {
 		return "index";
@@ -56,7 +56,7 @@ public class WebController {
 		
 		String sessionId = (String) session.getAttribute("sessionId");
 		
-		MemberDto memberDto = new MemberDto("GUEST"," ","비회원","guest@guest.com"," ");
+		MemberDto memberDto = new MemberDto("GUEST","","비회원","","");
 		
 		IDao dao = sqlSession.getMapper(IDao.class);
 		
@@ -64,7 +64,7 @@ public class WebController {
 			model.addAttribute("memberDto", memberDto);
 		} else {
 			model.addAttribute("memberDto", dao.getMemberInfo(sessionId));
-		}
+		}		
 		
 		return "question";
 	}
@@ -170,7 +170,7 @@ public class WebController {
 		
 		IDao dao = sqlSession.getMapper(IDao.class);
 		
-		dao.questionWriteDao(bid, bname, bcontent, bemail);
+		dao.questionWriteDao(bid, bname, bcontent, bemail);		
 		
 		return "redirect:list";
 	}
@@ -187,25 +187,4 @@ public class WebController {
 		return "list";
 	}
 	
-	@RequestMapping(value = "/contentView")
-	public String contentView(HttpServletRequest request, Model model) {
-		
-		IDao dao = sqlSession.getMapper(IDao.class);
-		
-		BoardDto boardDto = dao.contentViewDao(request.getParameter("bnum"));
-		
-		model.addAttribute("boardDto", boardDto);
-		
-		return "contentView";
-	}
-	
-	@RequestMapping(value = "/delete")
-	public String delete(HttpServletRequest request) {
-		
-		IDao dao = sqlSession.getMapper(IDao.class);
-		
-		dao.deleteDao(request.getParameter("bnum"));
-		
-		return "redirect:list";
-	}
 }
