@@ -6,13 +6,12 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/resources/css/title.css">
 <link rel="stylesheet" href="/resources/css/content.css">
-<script type="text/javascript" src="/resources/js/join.js"></script>
 <title>**MY PROFILE HOME**</title>
 </head>
 <body>
 <%@ include file="include/header.jsp" %>
 	<center>
-	<table border="0" cellspacing="0" cellpadding="20" width="75%">
+	<table border="0" cellspacing="0" cellpadding="0" width="75%">
 		<tr>
 			<td class="titlebox">
 				<span class="title01">DEVELOPER MOOHEE PROFILE</span>
@@ -31,31 +30,31 @@
 						<td class="contentbox">
 							<center>
 								<table border="0" cellspacing="0" cellpadding="10">
-								<form action="joinOk" method="post" name="join_frm">
+								<form action="questionOk" method="post">
 									<tr>
 										<td class="content_text">아 이 디 : </td>
-										<td><input class="inputbox01" type="text" name="mid"></td>
+										<td><input class="inputbox01" type="text" name="bid" value="${boardDto.mid }" readonly="readonly"></td>
+									</tr>									
+									<tr>
+										<td class="content_text">글 쓴 이 : </td>
+										<td><input class="inputbox01" type="text" name="bname" value="${boardDto.mname }" readonly="readonly"></td>
 									</tr>
 									<tr>
-										<td class="content_text">비밀번호 : </td>
-										<td><input  class="inputbox01" type="password" name="mpw"></td>
-									</tr>
-									<tr>
-										<td class="content_text">비밀번호확인 : </td>
-										<td><input class="inputbox01" type="password" name="mpw_check"></td>
-									</tr>
-									<tr>
-										<td class="content_text">이&nbsp;&nbsp;&nbsp;&nbsp;름 : </td>
-										<td><input class="inputbox01" type="text" name="mname"></td>
+										<td class="content_text">질문내용 : </td>
+										<td><textarea class="textareabox" rows="8" cols="30" name="bcontent" readonly="readonly">${boardDto.bcontent }</textarea></td>
 									</tr>
 									<tr>
 										<td class="content_text">이 메 일 : </td>
-										<td><input class="inputbox01" type="text" name="memail"></td>
+										<td><input class="inputbox01" type="text" name="beamil" value="${boardDto.memail }" readonly="readonly"></td>
+									</tr>
+									<tr>
+										<td class="content_text">등 록 일 : </td>
+										<td><input class="inputbox01" type="text" name="bdate" value="${boardDto.bdate }" readonly="readonly"></td>
 									</tr>
 									<tr>
 										<td colspan="2" align="center">
-											<input class="content_btn01" type="submit" value="가입완료" onclick="joinCheck()">&nbsp;&nbsp;
-											<input class="content_btn01" type="button" value="로그인" onclick="script:window.location.href='login'">
+											<input class="content_btn01" type="button" value="삭제하기" onclick="script:window.location.href='delete?bnum=${boardDto.bnum}'">&nbsp;&nbsp;
+											<input class="content_btn01" type="button" value="글목록" onclick="script:window.location.href='list'">
 										</td>
 									</tr>
 								</form>

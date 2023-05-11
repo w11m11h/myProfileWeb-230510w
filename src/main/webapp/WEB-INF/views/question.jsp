@@ -30,11 +30,11 @@
 						<td class="contentbox">
 							<center>
 								<table border="0" cellspacing="0" cellpadding="10">
-								<form action="loginOk" method="post">
+								<form action="questionOk" method="post">
 									<tr>
 										<td class="content_text">아 이 디 : </td>
 										<td><input class="inputbox01" type="text" name="bid" value="${memberDto.mid }" readonly="readonly"></td>
-									</tr>									<
+									</tr>									
 									<tr>
 										<td class="content_text">글 쓴 이 : </td>
 										<td><input class="inputbox01" type="text" name="bname" value="${memberDto.mname }"></td>
@@ -45,7 +45,7 @@
 									</tr>
 									<tr>
 										<td class="content_text">이 메 일 : </td>
-										<td><input class="inputbox01" type="text" name="beamil" value="${memberDto.memail }"></td>
+										<td><input class="inputbox01" type="text" name="bemail" value="${memberDto.memail }"></td>
 									</tr>
 									<tr>
 										<td colspan="2" align="center">
