@@ -5,4 +5,24 @@
    
 <mapper namespace="com.moohee.home.dao.IDao">
 
+	<insert id="joinDao">
+		INSERT INTO web_member(mid, mpw, mname, memail) VALUES (#{param1}, #{param2}, #{param3}, #{param4})
+	</insert>
+	
+	<select id="checkIdDao" resultType="int">
+		SELECT COUNT(*) FROM web_member WHERE mid=#{param1}
+	</select>
+	
+	<select id="checkIdPwDao" resultType="int">
+		SELECT COUNT(*) FROM web_member WHERE mid=#{param1} AND mpw=#{param2}
+	</select>
+	
+	<select id="getMemberInfo" resultType="com.gyojincompany.home.dto.MemberDto">
+		SELECT * FROM web_member WHERE mid=#{param1}
+	</select>
+	
+	<update id="modifyMemberDao">
+		UPDATE web_member SET mpw=#{param2}, mname=#{param3}, memail=#{param4} WHERE mid=#{param1}
+	</update>
+
 </mapper>
